@@ -1,2 +1,5 @@
-src/commands/index.js
+.eslintrc.js
 test/fixtures
+
+# ESLint doesn't support a new syntax export * as ns from "source". (eslint#12629)
+src/commands/index.js
