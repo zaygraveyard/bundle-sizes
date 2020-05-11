@@ -59,8 +59,7 @@ const command = commandName && commands[commandName];
 if (command) {
   const args = command.parseArgs(process.argv.slice(3));
 
-  command
-    .cli(args)
+  Promise.resolve(command.cli(args))
     .then(function (result) {
       //eslint-disable-next-line no-process-exit
       process.exit(0);
