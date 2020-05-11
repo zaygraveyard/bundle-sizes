@@ -4,8 +4,6 @@ export { create } from './ops/create.js';
 export { show } from './ops/show.js';
 export {
   CommandArgumentError,
-  parseSizesFile,
-  stringifySizesFile,
-  readSizesFile,
-  writeSizesFile,
+  parseSizesFile as parse,
+  stringifySizesFile as stringify,
 } from './utils.js';
