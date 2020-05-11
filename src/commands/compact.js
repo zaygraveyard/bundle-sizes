@@ -1,5 +1,5 @@
 import minimist from 'minimist';
-import { compact } from '../index.js';
+import { filter } from '../index.js';
 import {
   CommandArgumentError,
   handleUnknownCLIOption,
@@ -19,7 +19,7 @@ export async function cli({
   try {
     await writeSizesFile(
       sizesFilePath,
-      compact(await readSizesFile(sizesFilePath), {
+      filter(await readSizesFile(sizesFilePath), {
         keepMissingFiles,
         keepEmptyFiles,
       }),
