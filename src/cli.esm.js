@@ -3,8 +3,9 @@
 import fs from 'fs';
 import minimist from 'minimist';
 import colors from 'colors/safe.js';
-import { padRight, CommandArgumentError } from './utils.js';
-//eslint-disable-next-line import/namespace
+import { CommandArgumentError } from './utils.js';
+import { padRight } from './commands/utils.js';
+//eslint-disable-next-line import/namespace -- Uses export * as ns from "source" (eslint#12629)
 import * as commands from './commands/index.js';
 
 function getNameAndVersion() {

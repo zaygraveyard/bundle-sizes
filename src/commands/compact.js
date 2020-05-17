@@ -1,11 +1,11 @@
 import minimist from 'minimist';
 import { filter } from '../index.js';
+import { CommandArgumentError } from '../utils.js';
 import {
-  CommandArgumentError,
   handleUnknownCLIOption,
   readSizesFile,
   writeSizesFile,
-} from '../utils.js';
+} from './utils.js';
 
 export async function cli({
   _: [sizesFilePath],

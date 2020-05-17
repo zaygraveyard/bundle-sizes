@@ -41,7 +41,6 @@ export function compare(
 
   const filePaths = Object.keys({ ...sizesByFile, ...newSizesByFile });
   const records = [];
-  const total = new Proxy({ fileName: 'TOTAL' }, proxyHandler);
 
   for (const filePath of filePaths) {
     const fileName = relativeTo ? path.resolve(relativeTo, filePath) : filePath;
@@ -56,15 +55,20 @@ export function compare(
 
       record[key] = size;
       record[`${key}*`] = newSize;
-      total[key] = (total[key] || 0) + size;
-      total[`${key}*`] = (total[`${key}*`] || 0) + newSize;
-
       if (!changedSize && newSize !== size) {
         changedSize = true;
       }
     }
     if (showUnchanged || changedSize) {
       records.push(record);
+    }
+  }
+
+  const total = new Proxy({ fileName: 'TOTAL' }, proxyHandler);
+
+  for (const record of records) {
+    for (const key of Object.keys(record)) {
+      total[key] = (total[key] || 0) + record[key];
     }
   }
 

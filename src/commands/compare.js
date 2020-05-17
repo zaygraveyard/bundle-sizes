@@ -1,15 +1,15 @@
 import path from 'path';
 import minimist from 'minimist';
 import { compare } from '../index.js';
+import { CommandArgumentError } from '../utils.js';
 import {
-  CommandArgumentError,
   handleUnknownCLIOption,
   readSizesFile,
   getSizeColor,
   renderSizeBytes,
   renderSizePercent,
   renderTable,
-} from '../utils.js';
+} from './utils.js';
 
 export async function cli({
   _: [sizesFilePath, newSizesFilePath],
