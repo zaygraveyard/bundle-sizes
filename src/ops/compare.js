@@ -68,7 +68,9 @@ export function compare(
 
   for (const record of records) {
     for (const key of Object.keys(record)) {
-      total[key] = (total[key] || 0) + record[key];
+      if (typeof total[key] !== 'string') {
+        total[key] = (total[key] || 0) + record[key];
+      }
     }
   }
 
