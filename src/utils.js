@@ -22,7 +22,7 @@ export function coalesceRecords(records, idKey = 'filePath') {
   const map = new Map();
 
   for (const record of records) {
-    map.set(record[idKey], record);
+    map.set(record[idKey], { ...map.get(record[idKey]), ...record });
   }
   return Array.from(map.values());
 }
