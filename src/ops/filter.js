@@ -31,9 +31,13 @@ async function filterFileSizes(
 }
 
 export async function filter(sizesByFile, filters = {}) {
+  const filtered = await Promise.all(
+    Object.entries(sizesByFile).map(filterFileSizes.bind(null, filters)),
+  );
+
   return Object.fromEntries(
-    await Promise.all(
-      Object.entries(sizesByFile).map(filterFileSizes.bind(null, filters)),
-    ),
+    Object.entries(sizesByFile).filter(function (_, i) {
+      return filtered[i];
+    }),
   );
 }
