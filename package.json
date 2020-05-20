@@ -1,6 +1,6 @@
 {
   "name": "@ziadkh0/bundle-sizes",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A library and CLI to create and analyse the sizes of files",
   "main": "src/index.js",
   "module": "src/main.js",
