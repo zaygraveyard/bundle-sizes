@@ -19,7 +19,7 @@ export async function cli({
   try {
     await writeSizesFile(
       sizesFilePath,
-      filter(await readSizesFile(sizesFilePath), {
+      await filter(await readSizesFile(sizesFilePath), {
         keepMissingFiles,
         keepEmptyFiles,
       }),
