@@ -1,6 +1,6 @@
 import test from 'ava';
 import { CommandArgumentError } from '../src/utils.js';
-import { create } from '../src/main.js';
+import { create } from '../src/index.js';
 
 test('normal', (t) => {
   const path = 'a/path/to/a/file';

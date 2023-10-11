@@ -9,11 +9,11 @@ module.exports = {
     'eslint:recommended',
     'plugin:prettier/recommended',
     'plugin:import/errors',
-    'plugin:import/react',
     'plugin:@getify/proper-arrows/getify-says',
   ],
   plugins: [
     'prettier',
+    'import',
   ],
   rules: {
     // Possible Errors

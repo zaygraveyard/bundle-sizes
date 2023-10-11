@@ -2,13 +2,22 @@
   "name": "@ziadkh0/bundle-sizes",
   "version": "0.2.2",
   "description": "A library and CLI to create and analyse the sizes of files",
-  "main": "src/index.js",
-  "module": "src/main.js",
-  "bin": "src/cli.js",
+  "type": "module",
   "repository": "zaygraveyard/bundle-sizes",
+  "author": "Ziad EL KHOURY HANNA",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "compare size",
+    "file size",
+    "gzip size",
+    "bundle size"
+  ],
+  "main": "src/index.js",
+  "bin": "src/cli.js",
   "scripts": {
-    "lint": "eslint src test",
-    "fmt": "eslint src test --fix",
+    "lint": "eslint --ext .js,.mjs,.cjs src test",
+    "fmt": "eslint --ext .js,.mjs,.cjs src test --fix",
     "pretest": "npm run -s lint",
     "test": "ava",
     "preversion": "npm test",
@@ -25,33 +34,20 @@
     "files": [
       "test/**/*",
       "!test/fixtures"
-    ],
-    "require": [
-      "esm"
     ]
   },
-  "keywords": [
-    "cli",
-    "compare size",
-    "file size",
-    "gzip size",
-    "bundle size"
-  ],
-  "author": "Ziad EL KHOURY HANNA",
-  "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "esm": "^3.2.25",
-    "filesize": "^6.1.0",
+    "filesize": "^10.1.0",
     "minimist": "^1.2.5"
   },
   "devDependencies": {
-    "@getify/eslint-plugin-proper-arrows": "^9.1.1",
-    "ava": "^3.8.2",
-    "eslint": "^7.0.0",
-    "eslint-config-prettier": "^6.11.0",
+    "@getify/eslint-plugin-proper-arrows": "^11.0.3",
+    "ava": "^5.3.1",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-prettier": "^3.1.3",
-    "prettier": "^2.0.5"
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3"
   }
 }

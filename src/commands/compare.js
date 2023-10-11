@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import minimist from 'minimist';
 import { compare } from '../index.js';
 import { CommandArgumentError } from '../utils.js';

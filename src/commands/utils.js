@@ -1,5 +1,5 @@
-import { promises as fs } from 'fs';
-import fileSize from 'filesize';
+import fs from 'node:fs/promises';
+import { filesize } from 'filesize';
 import colors from 'colors/safe.js';
 import {
   parseRecordsJSON,
@@ -102,7 +102,7 @@ export function renderSizeBytes(
     isFinite(size)
       ? size === 0
         ? '--'
-        : (delta && size > 0 ? '+' : '') + fileSize(size)
+        : (delta && size > 0 ? '+' : '') + filesize(size)
       : '',
   );
 }
