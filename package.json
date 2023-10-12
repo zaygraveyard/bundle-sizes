@@ -1,6 +1,6 @@
 {
   "name": "@ziadkh0/bundle-sizes",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A library and CLI to create and analyse the sizes of files",
   "type": "module",
   "repository": "zaygraveyard/bundle-sizes",
