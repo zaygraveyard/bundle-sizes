@@ -20,7 +20,7 @@ const proxyHandler = {
   },
 };
 
-function normalizeFilePaths(map, regexp = /(-)[0-9a-f]{8}(.module.js)$/i) {
+function normalizeFilePaths(map, regexp = /(-).{8}(\.module\.js)$/i) {
   for (const filePath of Object.keys(map)) {
     const normalizedFilePath = filePath.replace(regexp, '$1[hash]$2');
 
